@@ -2,6 +2,9 @@ import pytest
 
 from selenium import webdriver
 
+from pages.login_page import LoginPage
+from pages.products_page import ProductsPage
+
 
 @pytest.fixture
 def start_driver():
@@ -45,3 +48,21 @@ def last_name():
 @pytest.fixture
 def zip_code():
     return "65000"
+
+
+@pytest.fixture
+def logged_in_standard_user(start_driver, navigate_to_url, username_standard, password):
+    login_page = LoginPage(navigate_to_url)
+    login_page.enter_username_standard(username_standard)
+    login_page.enter_password(password)
+    login_page.click_login()
+    yield ProductsPage(start_driver)
+
+
+@pytest.fixture
+def logged_in_performance_user(start_driver, navigate_to_url, username_performance, password):
+    login_page = LoginPage(navigate_to_url)
+    login_page.enter_username_performance(username_performance)
+    login_page.enter_password(password)
+    login_page.click_login()
+    yield ProductsPage(start_driver)

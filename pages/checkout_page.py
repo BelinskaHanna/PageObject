@@ -36,11 +36,11 @@ class CheckoutPage(BasePage):
     def click_continue(self):
         self.find(self.CONTINUE).click()
 
-    def finish_is_on_the_page(self):
+    def is_finish_is_on_the_page(self):
         return self.find(self.FINISH).is_displayed()
 
     def is_error_message_displayed(self):
         return self.find(self.ERROR).is_displayed()
 
-    def checkout_on_the_page(self):
+    def is_checkout_on_the_page(self):
         return self.find(self.CHECKOUT).is_displayed()

@@ -14,7 +14,7 @@ class OverviewPage(BasePage):
     def verify_first_item_description_match(self, expected_description):
         assert self.find(self.ITEM_DESCRIPTION).text == expected_description
 
-    def visible_price_total(self):
+    def is_visible_price_total(self):
         return self.find(self.PRICE_TOTAL).is_visible()
 
     def click_cancel_button(self):
@@ -23,8 +23,8 @@ class OverviewPage(BasePage):
     def click_finish_button(self):
         return self.find(self.FINISH).click()
 
-    def backhome_on_the_page(self):
+    def is_backhome_on_the_page(self):
         return self.find(self.BACKHOME).is_displayed()
 
-    def product_page_after_cancel(self):
+    def is_product_page_displayed_after_cancel(self):
         return self.find(self.PRODUCT_PAGE).is_displayed()

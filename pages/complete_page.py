@@ -10,5 +10,5 @@ class CompletePage(BasePage):
     def click_back_home_button(self):
         self.find(self.BACK_HOME).click()
 
-    def products_after_backhome(self):
+    def is_products_displayed_after_backhome(self):
         return self.find(self.PRODUCTS_AFTER_BACKHOME).is_displayed()

@@ -42,5 +42,5 @@ class CartPage(BasePage):
     def remove_from_cart(self):
         self.find(self.REMOVE_FROM).click()
 
-    def product_page_after_cart(self):
+    def is_product_page_displayed(self):
         return self.find(self.ON_PRODUCT_PAGE).is_displayed()

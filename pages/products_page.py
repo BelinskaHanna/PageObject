@@ -52,7 +52,7 @@ class ProductsPage(BasePage):
     def select_tshirt_red(self):
         self.find(self.TSHIRT_RED).click()
 
-    def logout_visible(self):
+    def is_logout_visible(self):
         self.find(self.LOGOUT_VISIBLE).is_displayed()
 
     def logout(self):
